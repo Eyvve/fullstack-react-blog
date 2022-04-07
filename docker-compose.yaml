@@ -16,9 +16,8 @@ services:
         environment:
             MYSQL_DATABASE: data
             MYSQL_ROOT_PASSWORD: password
-#        volumes:
-#            # Pour lancer un dump automatiquement au montage du conteneur
-#            - ./database/dump.sql:/docker-entrypoint-initdb.d/dump.sql
+        volumes:
+           - ./database/dump.sql:/docker-entrypoint-initdb.d/dump.sql
 
 
     phpmyadmin:
