@@ -1,5 +1,7 @@
 import React from 'react'
 
+import Article from './Article'
+
 function Articles() {
     // recoit en props le json de la bdd
   return (

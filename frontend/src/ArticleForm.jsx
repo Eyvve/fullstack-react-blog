@@ -11,12 +11,14 @@ function ArticleForm() {
     <>
         <form>
             <label>Nom de l'article</label>
-            <input type="text"></input>
-            
+            <br></br>
+            <input className='form-control' type="text"></input>
+            <br></br>
             <label>Contenu de l'article</label>
-            <textfield></textfield>
-
-            <button type='submit'></button>
+            <br></br>
+            <textarea className='form-control'></textarea>
+            <br></br>
+            <button className='btn btn-primary' type='submit'>Poster</button>
         </form>
     </>
   )
