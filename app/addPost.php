@@ -1,8 +1,8 @@
 <?php
 
+require './fuckCors.php';
 
 require './dbConnect.php';
-require './cors.php';
 // require './tokenGenerator.php';
 // $strToken = strval(bin2hex($token));
 

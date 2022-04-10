@@ -1,13 +1,10 @@
 <?php
 
+require './fuckCors.php';
 require './dbConnect.php';
-require './cors.php';
 
-header('Access-Control-Allow-Origin: http://localhost:3000/');
-header('Access-Control-Allow-Headers: authorization');
-header('Access-Control-Allow-Credentials: true');
-
-$getallposts = 'SELECT title, content, username FROM post LEFT JOIN user on post.userId = user.id;';
+$getallposts = 'SELECT title, content, username FROM article LEFT JOIN user on article.userId = user.id;';
+// $getallposts = 'SELECT * FROM article';
 
 
 try {
@@ -17,8 +14,9 @@ try {
         $postList[] = $row;
     }
 
-    var_dump($postList);
+    // var_dump($postList);
     echo json_encode($postList);
+    // echo json_encode($query);
 } catch (Exception $e) {
     die('MySQL Error : ' . $e->getMessage());
 }

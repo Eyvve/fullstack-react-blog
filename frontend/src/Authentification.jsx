@@ -19,18 +19,18 @@ function Authentification() {
 
   const handleConnect = (e) => {
     e.preventDefault()
-    setCredentials({
-      username : username,
-      password: password
-    })
-    console.log(credentials)
+    // setCredentials({
+    //   username : username,
+    //   password: password
+    // })
+    console.log('YOHO')
     handleSubmit()
   }
 
   const handleSubmit = async() => {
     const data = credentials
     await fetch("http://localhost:2345/addUser.php", {
-      // crossDomain: true,
+      crossDomain: true,
       method: 'POST',
       mode: 'cors',
       headers: {

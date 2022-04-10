@@ -1,13 +1,12 @@
 import React from 'react'
 
-function Article() {
-    // recoit en props article.id pour la key article.title, article.author et article.content
+function Article({postTitle, postContent, userName}) {
   return (
     <>
     <div>
-        <h2>{/* Titre de l'article */}</h2>
-        <h3>{/* Auteur de l'article */}</h3>
-        <p>{/* Contenu de l'article */}</p>
+        <h2>{postTitle}</h2>
+        <h3>{userName}</h3>
+        <p>{postContent}</p>
     </div>
     </>
   )
