@@ -4,8 +4,8 @@ require './fuckCors.php';
 require './dbConnect.php';
 require './tokenGenerator.php';
 
-$username = $_SERVER['PHP_AUTH_USER'];
-$password = $_SERVER['PHP_AUTH_PW'];
+$username = $_SERVER['title'];
+$password = $_SERVER['content'];
 
 $token = random_bytes(25);
 $strToken = strval(bin2hex($token));

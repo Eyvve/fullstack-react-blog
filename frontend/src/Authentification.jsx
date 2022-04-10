@@ -1,6 +1,6 @@
 import {React, useState, useEffect} from 'react'
 
-function Authentification() {
+function Authentification({setIsLogged}) {
 
 
   const [username, setUsername] = useState('');
@@ -10,19 +10,10 @@ function Authentification() {
     password : ''
   })
 
-  
-  // useEffect(() => {
-  //   if (connected === true){
-  //     return(<h2>Connecté</h2>)
-  //   }
-  // }, []);
+
 
   const handleConnect = (e) => {
     e.preventDefault()
-    // setCredentials({
-    //   username : username,
-    //   password: password
-    // })
     console.log('YOHO')
     handleSubmit()
   }
@@ -45,6 +36,8 @@ function Authentification() {
 
   return (
       <form>
+      <br></br>
+        <h2>Inscription</h2>
         <label>Username</label>
         <br></br>
         <input className='form-control' type="text" onChange={(e) => {setUsername(e.target.value)}}></input>
@@ -53,7 +46,8 @@ function Authentification() {
         <br></br>
         <input className='form-control' type='password'  onChange={(e) => {setPassword(e.target.value)}}></input>
         <br></br>
-        <button className='btn btn-primary' onClick={(e) => {handleConnect(e)}}>S'authentifier</button>
+        <button className='btn btn-primary' onClick={(e) => {handleConnect(e)}}>S'inscrire</button>
+        <br></br>
       </form>
   )
 }

@@ -1,6 +1,6 @@
 import {React, useState} from 'react'
 
-function ArticleForm() {
+function ArticleForm({IsLogged, currentUserId}) {
 
   
     const [title, setTitle] = useState('');
@@ -10,7 +10,7 @@ function ArticleForm() {
       content : ''
     })
 
-    const handleConnect = (e) => {
+    const handleSend = (e) => {
       e.preventDefault()
       setPostMeta({
         title : title,
@@ -28,7 +28,6 @@ function ArticleForm() {
         mode: 'cors',
         headers: {
           'Content-Type': 'application/x-www-form-urlencoded',
-          'Authorization': `Basic ${btoa(`${title}:${content}`)}` 
         },
         body: JSON.stringify(data)
       })
@@ -38,6 +37,8 @@ function ArticleForm() {
 
   return (
       <form>
+      <br></br>
+      <h2>Ajouter un article</h2>
         <label>Titre</label>
         <br></br>
         <input className='form-control' type="text" onChange={(e) => {setTitle(e.target.value)}}></input>
@@ -46,7 +47,8 @@ function ArticleForm() {
         <br></br>
         <textarea className='form-control'  onChange={(e) => {setContent(e.target.value)}}></textarea>
         <br></br>
-        <button className='btn btn-primary' onClick={(e) => {handleConnect(e)}}>Poster</button>
+        <button className='btn btn-primary' onClick={(e) => {handleSend(e)}}>Poster</button>
+        <br></br>
       </form>
   )
 }

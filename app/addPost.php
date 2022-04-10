@@ -3,11 +3,14 @@
 require './fuckCors.php';
 
 require './dbConnect.php';
-// require './tokenGenerator.php';
-// $strToken = strval(bin2hex($token));
 
 
-$addpost = "INSERT INTO `post` (`id`, `userId`, `title`, `content`) VALUES (NULL, '1', 'je suis josiane', 'haha je suis une folle ma gueule');";
+$title = $_POST['title'];
+$content = $_POST['content'];
+
+var_dump($_POST);
+
+$addpost = "INSERT INTO `article` (`id`, `userId`, `title`, `content`) VALUES (NULL, '1', '{$title}', '{$content}');";
 
 try {
     mysqli_query($db, $addpost);
